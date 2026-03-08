@@ -27,7 +27,25 @@
     <link rel="stylesheet" href="styles.css">
 
 <style>
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    display: block;
+  }
 
+  .content {
+    width: 100%;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+    
+    
     .accordion-wrapper {
         width: 100%;
         margin-bottom: 25px;
@@ -184,6 +202,127 @@
 
     
     
+    .section-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 24px;
+        text-align: center;
+        margin: 40px 0 20px 0;
+        color: var(--text-main);
+        font-weight: 700;
+    }
+
+    .docs-grid {
+        display: grid;
+        
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+        gap: 25px;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .doc-card {
+        background: var(--input-bg); 
+        border: 1px solid var(--border-color);
+        border-radius: 25px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .doc-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        background: var(--bg-container);
+    }
+
+    .doc-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 18px;
+        margin: 0 0 15px 0;
+        text-align: center;
+        color: var(--text-main);
+    }
+
+    
+    .iframe-container {
+        width: 100%;
+        height: 350px; 
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        background: #fff; 
+        margin-bottom: 15px;
+    }
+
+   
+   .iframe-container {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-container);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 90px;
+}
+
+    .doc-desc {
+        font-size: 13px;
+        color: var(--text-sec);
+        text-align: center;
+        margin-bottom: 15px;
+        line-height: 1.4;
+        flex-grow: 1; 
+    }
+
+    .doc-btn {
+        padding: 10px 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text-main);
+        border: 1px solid var(--border-color);
+        border-radius: 99px;
+        transition: all 0.2s;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .doc-btn:hover {
+        background: var(--text-main);
+        color: var(--bg-container);
+    }
+
+    
+    
+    
+    [data-theme="dark"] .iframe-container {
+        border-color: #444;
+        opacity: 0.9; 
+    }
+    
+    .section-subtitle {
+        text-align: center;
+        font-family: 'Open Sans', sans-serif; 
+        font-size: 14px;       
+        color: var(--text-sec); 
+        opacity: 0.5;          
+        line-height: 1.6;      
+        max-width: 800px;      
+        margin: 20px auto 40px auto; 
+        padding: 0 20px;       
+    }
+
+    
+    [data-theme="dark"] .section-subtitle {
+        opacity: 0.7; 
+    }
+    
     </style>
     </head>
 <body>
@@ -283,64 +422,72 @@
                     <li><a href="cursos.html"><i data-lucide="book-open"></i> CURSOS</a></li>
                     <li><a href="formularios.html"><i data-lucide="file-text"></i> FORMULARIOS</a></li>
                     <li><a href="youtube.html"><i data-lucide="youtube"></i> Canal de YouTube</a></li>
-                    <li><a href="autor.html"><i data-lucide="user"></i> Sobre el autor</a></li>
+                    <li><a href="autor.html"><i data-lucide="user"></i> Acerca de</a></li>
                 </ul>
             </nav>
         </aside>
 
         <main class="content">
             
-            
-         <div class="accordion-wrapper">
-    
-    <button class="accordion-btn">
-        <span>Proximamente</span>
-        <span class="acc-icon">+</span>
-    </button>
-  <div class="accordion-content">
-    <div class="thanks-wrapper">
-        <p>
-           Los cursos estarán disponibles proximamente, junto con videos que acompañen tu aprendizaje, si eres docente y tienes videos, guias o contenido de tu autoria y deseas que aparezcan aqui contactame.     <a href="mailto:s.rodriguezrojas939@gmail.com" class="contact-link">
-            s.rodriguezrojas939@gmail.com
-        </a>
-        </p>
-
-        </div>
-    </div>
-</div>
-
-                <button class="accordion-btn">
-        <span>Listado de futuros cursos</span>
-        <span class="acc-icon">+</span>
-    </button>
-    <div class="accordion-content">
-    <div class="thanks-wrapper">
-        <p>
-         Matematica operativa (Algebra y trigonometria)
-        </p>
-
-        <p>
-       Calculo diferencial
-        </p>
-        
-        
-        <p>
-       Calculo integral
-        </p>
-
-
-        <p>
-       Curso Conicas
-        </p>
-        
-        
-        </div>
-    </div>
-</div>
-
-
    
-  
+    <div class="resources-section">
+    <h2 class="section-title">Cursos</h2>
+    
+    <p class="section-subtitle">
+        A continuación encontrarás los cursos que estarán disponibles proximamente.
+    </p>
+   
+   <div class="docs-grid">
+        
+   
+<div class="doc-card">
+    <h3 class="doc-title">Álgebra</h3>
+    <div class="iframe-container">
+        <span style="font-size:80px;">∑</span>
+    </div>
+    <p class="doc-desc">Domina variables, ecuaciones y operaciones algebraicas para construir la base de todas las matemáticas avanzadas.</p>
+    <a href="todosloscursos">Ingresar al curso</a>
+</div>
+
+
+<div class="doc-card">
+    <h3 class="doc-title">Trigonometría</h3>
+    <div class="iframe-container">
+        <span style="font-size:80px;">△</span>
+    </div>
+    <p class="doc-desc">Explora el mundo de los ángulos, triángulos y funciones trigonométricas aplicadas a problemas reales.</p>
+    <a href="todosloscursos">Ingresar al curso</a>
+</div>
+
+
+<div class="doc-card">
+    <h3 class="doc-title">Cálculo diferencial</h3>
+    <div class="iframe-container">
+        <span style="font-size:80px;">𝑑</span>
+    </div>
+    <p class="doc-desc">Aprende a analizar funciones, calcular límites y derivadas para entender cómo cambian las cosas.</p>
+    <a href="todosloscursos">Ingresar al curso</a>
+</div>
+
+
+<div class="doc-card">
+    <h3 class="doc-title">Cálculo integral</h3>
+    <div class="iframe-container">
+        <span style="font-size:80px;">∫</span>
+    </div>
+    <p class="doc-desc">Descubre cómo acumular cantidades y resolver problemas de áreas, volúmenes y crecimiento.</p>
+    <a href="todosloscursos">Ingresar al curso</a>
+</div>
+
+
+<div class="doc-card">
+    <h3 class="doc-title">Ecuaciones diferenciales</h3>
+    <div class="iframe-container">
+        <span style="font-size:80px;">∂</span>
+    </div>
+    <p class="doc-desc">Aprende métodos para modelar y resolver fenómenos dinámicos usando ecuaciones diferenciales.</p>
+    <a href="todosloscursos">Ingresar al curso</a>
+</div>
 
 </div>
             
@@ -350,8 +497,8 @@
         
         <div class="footer-section">
             <h4 class="footer-h4">Contacto</h4>
-            <a href="mailto:s.rodriguezrojas939@gmail.com" class="footer-email">
-                s.rodriguezrojas939@gmail.com
+            <a href="mailto:raizcuadrada.co@gmail.com" class="footer-email">
+                raizcuadrada.co@gmail.com
             </a>
             <div class="footer-socials">
                 <a href="https://wa.me/573196510401" target="_blank" title="WhatsApp">
@@ -360,7 +507,7 @@
                 <a href="https://www.youtube.com/@ElRaizCuadrada" target="_blank" title="YouTube">
                     <i data-lucide="youtube"></i>
                 </a>
-                <a href="mailto:s.rodriguezrojas939@gmail.com" title="Correo">
+                <a href="mailto:raizcuadrada.co@gmail.com" title="Correo">
                     <i data-lucide="mail"></i>
                 </a>
                 <a href="https://github.com" target="_blank" title="GitHub">
